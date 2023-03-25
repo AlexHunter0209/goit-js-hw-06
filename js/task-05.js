@@ -1,13 +1,7 @@
-const refs = {
-    input: document.getElementById('name-input'),
-    spanEl: document.getElementById('name-output')
-};
 
-refs.input.addEventListener('input', onInputChange);
+const input = document.querySelector('#name-input')
+const output = document.querySelector('#name-output')
 
-function onInputChange(event) {
-    if (event.currentTarget.value.trim()!== "") {
-        refs.spanEl.textContent = event.currentTarget.value;
-      };
-    console.log(event.currentTarget.value);
-};
+input.addEventListener('input', () => {
+output.textContent = input.value || "Anonymous"
+})
